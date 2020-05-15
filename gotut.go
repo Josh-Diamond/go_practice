@@ -13,22 +13,13 @@ package main
 
 import ("fmt")
 
-func add(x,y float64) float64 { //float64 refers to 64bit instead of 32
-	return x + y
-}
-
-// const x int = 5
-func multiple(a,b string) (string, string) {
-	return a,b
-}
-
 func main() {
-	// var num1 float64 = 0.1
-	// var num2 float64 = 10.21
-	// or
-	// var num1, num2 float64 = 0.1, 10.21
-
-	// fmt.Println(add(num1, num2))
-	w1, w2 := "Hey", "Josh"
-	fmt.Println(w1,w2 )
+	x := 15
+	a := &x // points to x (memory address)
+	fmt.Println(a)
+	fmt.Println(*a) // points to x (read-through/find value)
+	*a = 5 // re-assigns value of 5 to x
+	fmt.Println(x)
+	*a = *a**a // reassign value of a to value of a times value of a ( 5 * 5 = 25)
+	fmt.Println(x)
 }
